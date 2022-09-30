@@ -1,3 +1,4 @@
+
 # Poc SqlServer CDC (Change Data Capture)
 Exemplo de uso de SqlServer com Change Data Capture (CDC) habilitado.
 
@@ -11,7 +12,7 @@ https://learn.microsoft.com/en-us/sql/relational-databases/track-changes/about-c
 
 Arquivo em `\dockercompose\sql-server-compose.yml`.
 
-```
+```yaml
 services:
   sqlserver_local:
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -29,7 +30,7 @@ services:
 ## Habilitando o CDC 
 
 Arquivo em `\scripts\testes-cdc.sql`.
- ```
+ ```sql
  -- Cria um database de teste
 CREATE  DATABASE TESTE_CDC
 USE TESTE_CDC
@@ -61,6 +62,7 @@ update Cliente set nome =  'Cliente 1 Alterado'  where id =  1
 -- Consulta na tabela CDC criada automaticamente para armazenar as alterações feitas na tabela Cliente
 select  *  from cdc.dbo_Cliente_CT where id =  1
 ```
+
 **OBS.:** Ao habilitar o CDC para uma tabela, o SqlServer gera uma tabela "clone" em `cdc.dbo_NOME-DA-TABELA_CT`. 
 Exemplo: 
 ```
