@@ -26,7 +26,7 @@ select is_cdc_enabled, * from SYS.databases
 select is_tracked_by_cdc, * from sys.tables
 
 -- Insere dados e modifica
-insert into Cliente values ('Clienbte 1')
+insert into Cliente values ('Cliente 1')
 update Cliente set nome = 'Cliente 1 Alterado' where id = 1
 
 -- Consulta na tabela CDC criada automaticamente para armazenar as alterações feitas na tabela Cliente

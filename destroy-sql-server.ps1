@@ -1,0 +1,1 @@
+docker-compose -f .\dockercompose\sql-server-compose.yml -p sqlserver-cdc-enabled down

@@ -27,6 +27,18 @@ services:
 
 **Importante:** O container deve subir com a variável `MSSQL_AGENT_ENABLED: "True"`, pois é o Agent do SqlServer que faz o trabalho de inserir as alterações nas tabelas do CDC. 
 
+## Criação de Destruição do Container
+
+Para criar o container SqlServer com o CDC habilitado, basta executar no PowerShell: 
+```
+.\create-sql-server.ps1
+```
+
+Para destruir o container, basta executar no PowerShell:
+```
+.\destroy-sql-server.ps1
+```
+
 ## Habilitando o CDC 
 
 Arquivo em `\scripts\testes-cdc.sql`.
