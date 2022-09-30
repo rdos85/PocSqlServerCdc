@@ -1,18 +1,18 @@
 -- Cria um database de teste
 CREATE DATABASE TESTE_CDC
+GO
+USE TESTE_CDC
+GO
 
 -- Cria tabela de exemplo
 CREATE TABLE dbo.Cliente(id INT IDENTITY PRIMARY KEY, nome VARCHAR(100))
+GO
 
 -- Habilita o CDC no database
-USE teste_cdc
-GO
 EXEC sys.sp_cdc_enable_db
 GO
 
 -- Habilita o CDC na tabela Cliente
-USE TESTE_CDC
-GO
 EXEC sys.sp_cdc_enable_table  
 @source_schema = N'dbo',  
 @source_name   = N'Cliente',  
